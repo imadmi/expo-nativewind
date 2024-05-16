@@ -1,4 +1,5 @@
 import {
+  Alert,
   Button,
   Image,
   SafeAreaView,
@@ -104,7 +105,7 @@ const index = () => {
             </View>
           </View>
           <View className="absolute bottom-14 right-0 w-full items-center justify-center">
-            <Link href="/profile-selector" className="">
+            <Link href="/profile-selector">
               <View className=" bg-white w-[70vw] items-center justify-center rounded-full py-3">
                 <Text className="text-[#273C75] font-kregular text-lg">
                   Continuer

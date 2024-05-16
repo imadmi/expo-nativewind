@@ -46,7 +46,6 @@ export default function RootLayout() {
   }
   return (
     <View className="h-full flex-1">
-
       <ScrollView
         contentContainerStyle={{
           height: "100%",
@@ -54,7 +53,12 @@ export default function RootLayout() {
         className="flex-1"
       >
         <Stack>
+          <Stack.Screen name="(buyer)" options={{ headerShown: false }} />
           <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="profile-selector"
+            options={{ headerShown: false }}
+          />
         </Stack>
       </ScrollView>
     </View>
