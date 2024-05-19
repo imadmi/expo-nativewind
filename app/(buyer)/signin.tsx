@@ -15,15 +15,14 @@ import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
 const { width: WIDTH, height: HIGHT } = Dimensions.get("window");
 import { useCallback, useMemo, useRef } from "react";
-import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
+import BottomSheet, { BottomSheetTextInput } from "@gorhom/bottom-sheet";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 // console.log(WIDTH, HIGHT);
-var x = 0;
-console.log(x, " Refreshing ...");
+console.log(" Refreshing ...");
 
 const Signin = () => {
-  const snapPoints = useMemo(() => ["55%", "10%", "93%"], []);
+  const snapPoints = useMemo(() => ["5%", "55%", "93%"], []);
 
   return (
     <GestureHandlerRootView>
@@ -56,10 +55,10 @@ const Signin = () => {
               </Text>
             </View>
 
-            <BottomSheet snapPoints={snapPoints} >
-              <View className="bg-white items-center">
+            <BottomSheet snapPoints={snapPoints} index={1}>
+              <View className="items-center">
                 <View>
-                  <Text className="text-[#273C75] font-kregular text-base mt-10">
+                  <Text className="text-[#273C75] font-kregular text-base mt-6">
                     Vous pourrez demander à
                   </Text>
                 </View>
@@ -82,9 +81,24 @@ const Signin = () => {
                   </Text>
                 </View>
 
-                <View></View>
+                <View className="flex-row w-full px-6 mt-6">
+                  <View className="py-4 px-4 border rounded-md justify-center mr-2 relative">
+                    <Text className="font-kregular text-base ">+212 </Text>
+                    <Text className="text-sm absolute -top-3 bg-red-50 left-3">
+                      Pays
+                    </Text>
+                  </View>
+                  <View className="py-2 px-4 border rounded-md flex-1 justify-center relative">
+                    <BottomSheetTextInput className="font-kregular text-lg " keyboardType="email-address">
+                      06
+                    </BottomSheetTextInput>
+                    <Text className=" text-sm absolute -top-3 bg-red-50 left-3">
+                      N° de téléphone
+                    </Text>
+                  </View>
+                </View>
 
-                <View className="w-full items-center justify-center mt-20">
+                <View className="w-full items-center justify-center mt-8">
                   <Link href="/profile-selector">
                     <View className=" bg-[#273C75] w-[70vw] items-center justify-center rounded-full py-3">
                       <Text className="text-white font-kregular text-lg">
